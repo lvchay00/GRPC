@@ -27,9 +27,8 @@ func main() {
 	if err != nil {
 		log.Fatal("failed to listen: %v", err)
 	}
-       for true{
+
 	s := grpc.NewServer()
 	pb.RegisterGreeterServer(s, &server{})
 	s.Serve(lis)
-            }
 }
